@@ -1,0 +1,115 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+apply plugin: 'com.google.gms.google-services'
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.example.kotlinfirebase"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    def volley='1.1.1'//NO USE
+    def gsonversion='2.8.6'//in use
+    def recyclerView='1.1.0'//in use
+    def recyclerViewSelection='1.1.0-rc03'//in use
+    def cardView='1.0.0'//in use
+    def retrofit='2.9.0'//in use
+    def lifecycle_version = "2.2.0"//in use
+    def arch_version = "2.1.0"//NO USE
+    def shimer="0.5.0"//NO USE
+    def swipeRefreshLayaout="1.1.0"//in use
+    def materialdesing="1.2.1"//in use
+    def paperdb="2.7.1"//in use
+    def AlertDialog="1.1@aar"//in use
+    def diagonalLayout="1.0.9"//in use
+    def kenburnsview="1.0.7"//in use
+    def picasso="2.71828"//in use
+    def lottie="3.6.0"//in use
+    def circleimageview="3.1.0"//in use
+    def androidAgo="1.4.0"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //dependencies news
+    implementation "com.android.volley:volley:$volley"
+    //GSON
+    implementation "com.google.code.gson:gson:$gsonversion"
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:$recyclerView"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:$recyclerViewSelection"
+    //CardView
+    implementation "androidx.cardview:cardview:$cardView"
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    //shimer
+    implementation "com.facebook.shimmer:shimmer:$shimer"
+    //swimpeRefresh
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayaout"
+    //material
+    implementation "com.google.android.material:material:$materialdesing"
+    //paperdb para la guardar localmente los elementos
+    implementation "io.paperdb:paperdb:$paperdb"
+    //alertDialog progres
+    implementation "com.github.d-max:spots-dialog:$AlertDialog"
+    //diagonalLayout
+    implementation "com.github.florent37:diagonallayout:$diagonalLayout"
+    //Android library that provides an extension to ImageView that creates an immersive experience by animating its drawable using the Ken Burns Effect.
+    implementation "com.flaviofaria:kenburnsview:$kenburnsview"
+    //picasso
+    implementation "com.squareup.picasso:picasso:$picasso"
+    // Lottie
+    implementation "com.airbnb.android:lottie:$lottie"
+    //circleimageView
+    implementation "de.hdodenhof:circleimageview:$circleimageview"
+    //This library provides RelativeTimeTextView, a custom TextView that takes a reference time and always displays the relative time with respect to the reference point, automatically refreshing the display text as needed.
+    implementation "com.github.curioustechizen.android-ago:library:$androidAgo"
+
+    //LIBRARYS FOR FIREBASE
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    // Declare the dependencies for any other desired Firebase products
+    // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+}

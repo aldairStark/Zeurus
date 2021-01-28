@@ -1,0 +1,30 @@
+package com.example.kotlinfirebase.NistApi
+
+data class Dataset(
+    val type: String,
+    val accessLevel: String,
+    val accrualPeriodicity: String,
+    val bureauCode: List<String>,
+    val conformsTo: String,
+    val contactPoint: ContactPoint,
+    val dataQuality: Boolean,
+    val describedBy: String,
+    val describedByType: String,
+    val description: String,
+    val distribution: List<Distribution>,
+    val identifier: String,
+    val issued: String,
+    val keyword: List<String>,
+    val landingPage: String,
+    val language: List<String>,
+    val license: String,
+    val modified: String,
+    val programCode: List<String>,
+    val publisher: Publisher,
+    val references: List<String>,
+    val rights: String,
+    val spatial: String,
+    val temporal: String,
+    val theme: List<String>,
+    val title: String
+)
